@@ -1,0 +1,46 @@
+# Composer & Dependencies
+/vendor
+composer.phar
+
+# Environment & Sensitive Credentials
+.env
+.env.backup
+.env.local
+.env.testing
+.env.production
+.env.*.local
+auth.json
+
+# Node & NPM
+/node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Frontend Build & Assets
+/public/build
+/public/hot
+
+# Laravel Storage & Framework
+/public/storage
+/storage/*.key
+/storage/framework/*.php
+/storage/framework/lsp-*
+
+# Testing
+/.phpunit.cache
+.phpunit.result.cache
+
+# Server & VM
+Homestead.json
+Homestead.yaml
+
+# IDE, AI Tools & OS Artifacts
+/.cosine
+/.fleet
+/.idea
+/.vscode
+.DS_Store
+Thumbs.db
+desktop.ini
