@@ -1,7 +1,7 @@
 <p align="center">
   <h1 align="center">🏫 Web Profile & CMS Resmi SMA Laboratorium UPGRIS</h1>
   <p align="center">
-    <strong>Sistem Informasi Profil Sekolah, Manajemen Konten (CMS), dan Layanan Siswa Digital</strong><br>
+    <strong>Website Profil Sekolah & Content Management System (CMS) Terintegrasi</strong><br>
     SMA Laboratorium Universitas PGRI Semarang
   </p>
 </p>
@@ -19,10 +19,9 @@
 
 ## 📌 Daftar Isi
 - [Tentang Proyek](#-tentang-proyek)
-- [Fitur Utama](#-fitur-utama)
-  - [Portal Publik](#1-portal-publik)
-  - [Panel Dashboard Admin (CMS)](#2-panel-dashboard-admin-cms)
-  - [Layanan Digital Siswa](#3-layanan-digital-siswa)
+- [Fitur Utama Berdasarkan Tampilan (Views)](#-fitur-utama-berdasarkan-tampilan-views)
+  - [1. Halaman Publik (Pengunjung)](#1-halaman-publik-pengunjung)
+  - [2. Panel Dashboard Admin (CMS Back-Office)](#2-panel-dashboard-admin-cms-back-office)
 - [Tech Stack](#-tech-stack)
 - [Struktur Direktori](#-struktur-direktori)
 - [Panduan Instalasi Lokal](#-panduan-instalasi-lokal)
@@ -35,49 +34,55 @@
 
 ## 📖 Tentang Proyek
 
-**Web Profile SMA Laboratorium UPGRIS** adalah aplikasi web berbasis monolit modern yang dirancang untuk memenuhi kebutuhan digitalisasi institusi pendidikan. Aplikasi ini menggabungkan portal informasi publik sekolah yang elegan dan responsif dengan sistem manajemen konten (*Content Management System*) yang fleksibel.
+**Web Profile SMA Laboratorium UPGRIS** adalah aplikasi web berbasis monolit modern yang dirancang sebagai sarana publikasi informasi dan representasi digital resmi bagi SMA Laboratorium UPGRIS (Semarang). 
 
-Melalui platform ini, pihak sekolah dapat mempublikasikan seluruh informasi penting—mulai dari profil lembaga, tenaga pendidik, agenda kegiatan, galeri dokumentasi, hingga pengumuman kelulusan siswa secara mandiri dan terstruktur.
+Aplikasi ini memiliki dua sisi utama:
+1. **Portal Publik**: Menampilkan informasi institusi secara elegan, interaktif, responsif, dan mudah diakses oleh calon siswa, orang tua, dan masyarakat umum.
+2. **Dashboard Admin (CMS)**: Panel administrasi mandiri untuk mempermudah staf atau administrator sekolah dalam mengelola seluruh konten website (artikel berita, agenda, sarpras, guru, prestasi, dan pengaturan situs) tanpa perlu menyentuh kode program.
 
 ---
 
-## ✨ Fitur Utama
+## ✨ Fitur Utama Berdasarkan Tampilan (Views)
 
-### 1. Portal Publik
-- **Beranda Interaktif**: Menampilkan *hero section*, statistik sekolah yang di-cache untuk performa maksimal, sambutan kepala sekolah, artikel/berita terbaru, agenda terdekat, serta testimoni alumni.
-- **Profil Sekolah**: Menampilkan visi & misi, sejarah, program studi/peminatan, serta halaman profil dinamis.
-- **Direktori Guru & Staf**: Menampilkan daftar pendidik dan tenaga kependidikan lengkap dengan mata pelajaran yang diampu.
-- **Akademik & Kesiswaan**: Informasi prestasi siswa/sekolah, kalender & agenda akademik, ekstrakurikuler, dan organisasi kesiswaan (OSIS/MPK).
-- **Sarana & Prasarana**: Galeri fasilitas dan sarana penunjang kegiatan belajar mengajar.
-- **Pemberitaan & Blog**: Publikasi berita dengan kategori, tag, dan integrasi relasi *many-to-many*.
-- **Galeri & Dokumentasi**: Album foto kegiatan sekolah yang terorganisir rapi.
-- **Pusat Unduhan (Dokumen)**: Berkas, formulir, atau silabus resmi yang dapat diunduh publik secara langsung.
-- **Pencarian Global (`/search`)**: Fitur pencarian multi-tabel untuk memudahkan pengunjung menemukan berita, prestasi, atau dokumen sekolah.
-- **Formulir Kontak**: Saluran bagi pengunjung untuk mengirimkan pertanyaan atau kritik/saran yang terhubung langsung ke dashboard admin.
+Fitur-fitur di bawah ini mencerminkan apa yang **benar-benar tampil dan dapat diakses** pada antarmuka web:
 
-### 2. Panel Dashboard Admin (CMS)
-- **Role-Based Access Control (RBAC)**: Menggunakan `spatie/laravel-permission` dengan pemisahan peran:
-  - `Super Admin`: Akses penuh ke seluruh konfigurasi sistem, peran, pengguna, dan konten.
-  - `Editor Konten`: Pengelolaan artikel, berita, tag, kategori, galeri, dan prestasi.
-  - `Staf PPDB`: Pengelolaan data pendaftaran dan publikasi informasi terkait PPDB.
-  - `Guru`: Akses mandiri untuk mengelola profil dan mata pelajaran terkait.
-- **Manajemen Konten Lengkap (CRUD)**:
-  - Berita / Artikel (Draft & Published, Thumbnail, Relasi Tag & Kategori)
-  - Halaman Dinamis (*Static Pages*)
-  - Galeri Album & Foto Kegiatan
-  - Guru, Staf, & Relasi Mata Pelajaran
-  - Sarpras / Fasilitas Sekolah
-  - Ekstrakurikuler & Organisasi Siswa
-  - Agenda Akademik & Kalender Pendidikan
-  - Testimoni Alumni & Prestasi Sekolah
-- **Kotak Masuk Kontak (*Inbox*)**: Notifikasi dan peninjauan pesan yang masuk melalui formulir kontak publik.
-- **Pengaturan Situs (*Site Settings*)**: Pengaturan identitas sekolah, logo, favicon, kontak, alamat, dan media sosial tanpa menyentuh kode.
+### 1. Halaman Publik (Pengunjung)
+- **Beranda (Home)**:
+  - *Hero Section* dengan latar belakang kampus dan tombol pintas ke informasi profil / PPDB.
+  - Kartu statistik pencapaian sekolah (Jumlah Pendidik, Siswa Aktif, Ekstrakurikuler, dan Prestasi) dengan animasi penghitung interaktif.
+  - Seksi Berita & Informasi Terkini (menampilkan artikel terbaru dengan thumbnail dan badge kategori).
+  - Seksi Agenda Kalender Akademik (menampilkan agenda terdekat dengan penanggalan yang jelas).
+  - Seksi Jejak Alumni (testimoni alumni beserta pekerjaan dan foto).
+- **Profil Sekolah**: Halaman statis dinamis yang dimuat melalui navigasi dropdown (misalnya Visi Misi, Sejarah, Akreditasi).
+- **Akademik**:
+  - **Kalender Akademik**: Daftar kegiatan dan agenda sekolah terstruktur.
+  - **Prestasi Sekolah**: Galeri pencapaian prestasi akademik dan non-akademik siswa/sekolah.
+- **Kesiswaan**:
+  - **Organisasi Siswa**: Profil organisasi kesiswaan (OSIS, MPK, dsb.).
+  - **Ekstrakurikuler**: Daftar kegiatan ekskul beserta dokumentasi dan pembimbingnya.
+- **Sarana & Prasarana**: Katalog fasilitas fisik sekolah penunjang kegiatan belajar mengajar.
+- **Berita & Artikel**: Daftar berita lengkap dengan pagination, filter kategori, tagar (tags), dan halaman baca detail artikel.
+- **Pencarian Global**: Fitur modal pencarian instan pada navbar untuk memudahkan menemukan artikel atau informasi di website.
+- **Footer Terpadu**: Informasi kontak resmi, tautan media sosial, serta sematan peta lokasi (*Google Maps Embed*).
 
-### 3. Layanan Digital Siswa
-- **Pengumuman Kelulusan Online (`/pengumuman-kelulusan`)**:
-  - Pengecekan status kelulusan mandiri oleh siswa.
-  - Validasi berbasis Nomor Induk Siswa Nasional (NISN) dan verifikasi kode keamanan institusi.
-  - Menampilkan Surat Keterangan Kelulusan (SK Kelulusan) digital yang siap dicetak.
+### 2. Panel Dashboard Admin (CMS Back-Office)
+- **Dashboard Ringkasan**: Menampilkan kartu metrik cepat (Total Guru & Staf, Total Postingan, Galeri) dan tabel draft/published berita terbaru.
+- **Manajemen Konten**:
+  - **Berita & Artikel**: CRUD artikel lengkap dengan editor konten, thumbnail, status publikasi (*Draft/Published*), kategori, dan tag.
+  - **Halaman Statis**: Kelola halaman dinamis profil sekolah beserta lampiran dokumen pendukung.
+  - **Kategori & Tag**: Pengelompokan taksonomi artikel secara fleksibel.
+- **Media & Galeri**: Pengelolaan album kegiatan sekolah dan multi-upload foto.
+- **Prestasi & Testimoni**: Kelola daftar prestasi dan kutipan testimoni alumni.
+- **Kotak Masuk Pesan Kontak**: Melihat dan mengelola pesan kritik/saran yang dikirimkan pengunjung.
+- **Data Akademik**:
+  - **Guru & Tenaga Kependidikan**: Pendataan staf pengajar dan relasi mata pelajaran yang diampu.
+  - **Mata Pelajaran**: Manajemen daftar mata pelajaran sekolah.
+  - **Fasilitas**: Pendataan sarana prasarana sekolah.
+  - **Jurusan / Peminatan**: Informasi program peminatan siswa.
+  - **Ekstrakurikuler & Organisasi**: Kelola deskripsi dan pembina ekskul/organisasi.
+  - **Agenda Akademik**: Jadwal dan kalender kegiatan sekolah.
+- **Manajemen Pengguna & Otorisasi**: Manajemen pengguna internal dengan pembagian peran (*Role-Based Access Control*) menggunakan `spatie/laravel-permission` (Super Admin, Editor Konten, Staf PPDB, Guru).
+- **Pengaturan Situs (Settings)**: Pengaturan identitas sekolah (Nama, Slogan, Alamat, No. Telepon, Email, URL Media Sosial, Logo, Favicon, dan Peta Lokasi) yang langsung diterapkan ke seluruh halaman publik.
 
 ---
 
@@ -87,14 +92,15 @@ Melalui platform ini, pihak sekolah dapat mempublikasikan seluruh informasi pent
 - **Framework**: [Laravel 10.x](https://laravel.com/)
 - **Bahasa**: [PHP 8.1+](https://www.php.net/)
 - **Database**: [MySQL](https://www.mysql.com/) / [MariaDB](https://mariadb.org/)
-- **Authentication**: [Laravel Breeze](https://laravel.com/docs/10.x/starter-kits#laravel-breeze)
-- **Authorization**: [Spatie Laravel-Permission v6](https://spatie.be/docs/laravel-permission/)
-- **API Token**: [Laravel Sanctum](https://laravel.com/docs/10.x/sanctum)
+- **Autentikasi**: [Laravel Breeze](https://laravel.com/docs/10.x/starter-kits#laravel-breeze)
+- **Otorisasi (RBAC)**: [Spatie Laravel-Permission v6](https://spatie.be/docs/laravel-permission/)
+- **Asset Storage**: Laravel Local Storage dengan *public symlink*
 
 ### Frontend
+- **Template Engine**: Laravel Blade Components & Layouts
 - **CSS Framework**: [Tailwind CSS v3.4](https://tailwindcss.com/)
 - **Plugins**: `@tailwindcss/typography`, `@tailwindcss/forms`
-- **Reactivity**: [Alpine.js v3.4](https://alpinejs.dev/) & Vanilla JavaScript
+- **Reactivity & Interaktivitas**: [Alpine.js v3.4](https://alpinejs.dev/) & Vanilla JavaScript (collapsible sidebar, drawer mobile, modal search)
 - **Asset Bundler**: [Vite 5.x](https://vitejs.dev/)
 
 ---
@@ -104,26 +110,26 @@ Melalui platform ini, pihak sekolah dapat mempublikasikan seluruh informasi pent
 ```text
 ├── app/
 │   ├── Http/
-│   │   ├── Controllers/          # Controller halaman publik & administrasi
-│   │   │   └── Admin/            # Controller khusus modul dashboard back-office
-│   │   └── Middleware/           # Middleware autentikasi dan otorisasi peran
-│   └── Models/                   # Model Eloquent (Post, Staff, Facility, Student, dsb.)
+│   │   ├── Controllers/          # Controller publik (Home, Post, Search, dsb.)
+│   │   │   └── Admin/            # Controller panel dashboard back-office
+│   │   └── View/Composers/       # View Composers (SettingComposer, NavigationComposer)
+│   └── Models/                   # Model Eloquent (Post, Staff, Facility, Setting, dsb.)
 ├── config/                       # Konfigurasi aplikasi, database, dan permission
 ├── database/
 │   ├── migrations/               # Skema migrasi database
-│   └── seeders/                  # Seeder pengguna awal, peran (roles), dan permissions
-├── public/                       # Entry point aplikasi (index.php), aset statis, dan unggahan
+│   └── seeders/                  # Seeder pengguna, peran (roles), dan pengaturan default
+├── public/                       # Aset publik statis, favicon, gambar, dan link storage
 ├── resources/
 │   ├── css/                      # Konfigurasi Tailwind CSS
 │   ├── js/                       # Script interaktivitas & logika sidebar dashboard
-│   └── views/                    # Template Blade (layout publik, komponen, dan admin)
-│       ├── admin/                # Tampilan dashboard manajemen
-│       ├── kelulusan/            # Halaman cek kelulusan dan hasil SKL
-│       └── public/               # Tampilan pengunjung portal utama
+│   └── views/                    # Template Blade
+│       ├── admin/                # Tampilan seluruh modul CMS back-office
+│       ├── layouts/              # Master layout (template publik & dashboard app)
+│       └── public/               # Tampilan portal pengunjung
 ├── routes/
-│   ├── auth.php                  # Rute autentikasi bawaan Breeze
-│   └── web.php                   # Rute web publik dan dashboard admin
-└── storage/                      # File log, cache, sesi, dan berkas unggahan publik
+│   ├── auth.php                  # Rute autentikasi Breeze
+│   └── web.php                   # Rute publik & rute manajemen dashboard
+└── storage/                      # File log, cache, sesi, dan berkas unggahan pengguna
 ```
 
 ---
@@ -131,10 +137,10 @@ Melalui platform ini, pihak sekolah dapat mempublikasikan seluruh informasi pent
 ## 🚀 Panduan Instalasi Lokal
 
 Pastikan perangkat Anda telah terpasang:
-- **PHP >= 8.1** (beserta ekstensi `bcmath`, `ctype`, `fileinfo`, `json`, `mbstring`, `openssl`, `pdo_mysql`, `tokenizer`, `xml`)
+- **PHP >= 8.1** (beserta ekstensi PDO MySQL, Fileinfo, Mbstring, OpenSSL)
 - **Composer** (v2.x)
 - **Node.js** (v18.x atau lebih baru) & **NPM**
-- **MySQL / MariaDB**
+- **MySQL / MariaDB** (via XAMPP, Laragon, atau standalone)
 
 ### 1. Kloning Repository
 ```bash
@@ -142,22 +148,18 @@ git clone https://github.com/<username>/web-profile-sma-laboratorium-upgris.git
 cd web-profile-sma-laboratorium-upgris
 ```
 
-### 2. Pasang Dependensi PHP (Composer)
+### 2. Pasang Dependensi
 ```bash
 composer install
-```
-
-### 3. Pasang Dependensi Frontend (NPM)
-```bash
 npm install
 ```
 
-### 4. Konfigurasi File Environment (`.env`)
+### 3. Konfigurasi File Environment (`.env`)
 Salin file konfigurasi contoh:
 ```bash
 cp .env.example .env
 ```
-Buka file `.env` dan sesuaikan pengaturan koneksi database Anda:
+Buka file `.env` dan sesuaikan koneksi database lokal:
 ```env
 APP_NAME="SMA Laboratorium UPGRIS"
 APP_URL=http://127.0.0.1:8000
@@ -165,69 +167,66 @@ APP_URL=http://127.0.0.1:8000
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=nama_database_anda
+DB_DATABASE=smalab_upgris_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### 5. Generate Application Key
+### 4. Generate Application Key
 ```bash
 php artisan key:generate
 ```
 
-### 6. Jalankan Migrasi & Database Seeder
-Perintah ini akan membuat semua tabel database beserta data peran/pengguna awal:
+### 5. Jalankan Migrasi & Database Seeder
+Perintah ini akan membuat semua tabel database beserta data peran (*roles*), akun administrator, dan pengaturan default sekolah:
 ```bash
-php artisan migrate --seed
+php artisan migrate:fresh --seed
 ```
 
-### 7. Hubungkan Storage ke Folder Publik
-Agar foto berita, berkas unduhan, dan gambar galeri dapat diakses di browser:
+### 6. Hubungkan Storage ke Folder Publik
+Agar foto berita, gambar fasilitas, dan berkas upload dapat tampil di browser:
 ```bash
 php artisan storage:link
 ```
 
-### 8. Jalankan Server Pengembangan
-Jalankan kompilasi aset frontend (Vite):
+### 7. Jalankan Server Pengembangan
+Jalankan kompilasi aset frontend di satu terminal:
 ```bash
 npm run dev
 ```
 
-Buka terminal baru dan jalankan server lokal Laravel:
+Buka terminal kedua dan jalankan server lokal Laravel:
 ```bash
 php artisan serve
 ```
 
-Akses website melalui browser di: `http://127.0.0.1:8000`
+Akses website melalui browser di: **`http://127.0.0.1:8000`**
 
 ---
 
 ## 🔐 Data Akun Bawaan (Seeder)
 
-Setelah menjalankan `php artisan db:seed`, akun awal berikut siap digunakan untuk menguji dashboard:
+Setelah menjalankan `php artisan migrate:fresh --seed`, akun administrator berikut siap digunakan untuk masuk ke dashboard admin:
 
 | Role | Email | Password Bawaan |
 | :--- | :--- | :--- |
 | **Super Admin** | `admin@mail.com` | `Kurosaki0105$` |
 
 > [!WARNING]
-> Sangat disarankan untuk segera mengubah password default tersebut melalui menu **Profil Pengguna** di dashboard atau mengubahnya langsung pada `database/seeders/UserSeeder.php` sebelum digunakan di server produksi.
+> Sangat disarankan untuk segera mengubah password default tersebut melalui menu profil dashboard atau pada seeder sebelum digunakan di lingkungan produksi (*production*).
 
 ---
 
 ## 📋 Perintah yang Sering Digunakan
 
 ```bash
-# Menjalankan build aset produksi
+# Menjalankan build aset untuk produksi
 npm run build
 
-# Membersihkan seluruh cache sistem
+# Membersihkan seluruh cache konfigurasi & view
 php artisan optimize:clear
 
-# Melakukan cache konfigurasi & route untuk produksi
-php artisan optimize
-
-# Membuat link symlink storage (jika gambar tidak muncul)
+# Membuat symlink storage jika gambar tidak muncul
 php artisan storage:link
 ```
 
@@ -235,14 +234,14 @@ php artisan storage:link
 
 ## 🛡 Keamanan & Praktik Terbaik
 
-- **Jangan pernah melakukan commit file `.env`** ke version control. Gunakan selalu `.env.example` sebagai referensi variabel konfigurasi.
-- **Mode Produksi**: Pastikan `APP_ENV=production` dan `APP_DEBUG=false` saat aplikasi di-deploy ke server online.
-- Seluruh formulir menggunakan perlindungan token **CSRF** bawaan Laravel (`@csrf`).
-- Manajemen upload file menerapkan validasi ukuran file dan tipe MIME (MIME-type validation).
+- File `.env` tidak pernah di-commit ke Git.
+- Proteksi CSRF aktif di seluruh form data.
+- Upload berkas dilengkapi validasi tipe MIME dan ekstensi yang diizinkan.
+- Sistem otorisasi berbasis hak akses (*Permission*) untuk mencegah akses unauthorized ke menu CMS.
 
 ---
 
 ## 📄 Lisensi
 
-Proyek ini dikembangkan di bawah lisensi [MIT License](LICENSE).
+Proyek ini dikembangkan di bawah lisensi [MIT License](LICENSE).  
 Hak Cipta &copy; SMA Laboratorium UPGRIS Semarang.

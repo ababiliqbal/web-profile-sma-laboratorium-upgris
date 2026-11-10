@@ -21,20 +21,20 @@
             </div>
             <div class="relative z-10 text-center px-4" data-aos="fade-up" data-aos-duration="1000">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-xl">
-                    {{ $settings['school_name'] }}
+                    {{ $settings['school_name'] ?? 'SMA Laboratorium UPGRIS' }}
                 </h1>
                 <p class="mt-4 text-lg md:text-xl text-blue-200/95 max-w-3xl mx-auto">
                     Membentuk Insan Cerdas, Kompetitif, dan Berkarakter Pancasila.
                 </p>
                 <div class="mt-10 flex flex-wrap justify-center gap-4">
-                    <a href="{{ route('profil.pages.show', $infoPPDB->slug) }}"
+                    <a href="{{ $infoPPDB ? route('profil.pages.show', $infoPPDB->slug) : '#' }}"
                         class="inline-flex items-center justify-center bg-yellow-400 text-blue-900 font-semibold py-3 px-8 rounded-xl
                               ring-1 ring-yellow-300/60 shadow-sm hover:shadow-lg
                               transform-gpu transition duration-200 hover:-translate-y-0.5 active:translate-y-0
                               hover:bg-yellow-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-yellow-500 text-lg">
                         Info PPDB 2025
                     </a>
-                    <a href="{{ route('profil.pages.show', $profilSekolah->slug) }}"
+                    <a href="{{ $profilSekolah ? route('profil.pages.show', $profilSekolah->slug) : '#' }}"
                         class="inline-flex items-center justify-center bg-white/20 backdrop-blur-sm border border-white/50 text-white font-semibold py-3 px-8 rounded-xl
                               ring-1 ring-white/40 hover:ring-white/60 shadow-sm hover:shadow-lg
                               transform-gpu transition duration-200 hover:-translate-y-0.5 active:translate-y-0

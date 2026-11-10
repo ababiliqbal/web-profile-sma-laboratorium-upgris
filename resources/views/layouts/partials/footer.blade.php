@@ -104,7 +104,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
-                        <span class="text-white">{{ $settings['school_address'] }}</span>
+                        <span class="text-white">{{ $settings['school_address'] ?? 'Jl. Sidodadi Timur No. 24, Karangtempel, Semarang' }}</span>
                     </li>
                     <li class="flex items-center">
                         <svg class="w-5 h-5 mr-3 flex-shrink-0 text-yellow-400" fill="none" stroke="currentColor"
@@ -113,8 +113,8 @@
                                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
                             </path>
                         </svg>
-                        <a href="tel:{{ $settings['school_phone'] }}"
-                            class="text-white hover:text-yellow-400 transition-colors duration-300 focus:text-yellow-400 focus:outline-none">{{ $settings['school_phone'] }}</a>
+                        <a href="tel:{{ $settings['school_phone'] ?? '(024) 8448332' }}"
+                            class="text-white hover:text-yellow-400 transition-colors duration-300 focus:text-yellow-400 focus:outline-none">{{ $settings['school_phone'] ?? '(024) 8448332' }}</a>
                     </li>
                     <li class="flex items-center">
                         <svg class="w-5 h-5 mr-3 flex-shrink-0 text-yellow-400" fill="none" stroke="currentColor"
@@ -123,8 +123,8 @@
                                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
                             </path>
                         </svg>
-                        <a href="mailto:info@smalabupgris.sch.id"
-                            class="text-white hover:text-yellow-400 transition-colors duration-300 focus:text-yellow-400 focus:outline-none">info@smalabupgris.sch.id</a>
+                        <a href="mailto:{{ $settings['school_email'] ?? 'info@smalabupgris.sch.id' }}"
+                            class="text-white hover:text-yellow-400 transition-colors duration-300 focus:text-yellow-400 focus:outline-none">{{ $settings['school_email'] ?? 'info@smalabupgris.sch.id' }}</a>
                     </li>
                 </ul>
             </div>
@@ -134,7 +134,7 @@
                 <h3 class="font-bold text-lg text-white mb-6 pb-4 border-b border-white tracking-wider">Lokasi
                     Sekolah</h3>
                 <div class="rounded-lg overflow-hidden shadow-lg">
-                    <iframe src="{{ $settings['gmaps_url'] }}" width="100%" height="150" style="border:0;"
+                    <iframe src="{{ $settings['gmaps_url'] ?? 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2223078491854!2d110.4357!3d-6.983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTgnNTguOCJTIDExMMKwMjYnMDguNSJF!5e0!3m2!1sid!2sid!4v1600000000000!5m2!1sid!2sid' }}" width="100%" height="150" style="border:0;"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                         title="Peta Lokasi SMA Laboratorium UPGRIS">
                     </iframe>
